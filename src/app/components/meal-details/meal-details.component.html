@@ -1,1 +1,21 @@
-<p>meal-details works!</p>
+<h2 class="text-center text-2xl bold m-2">
+  {{meal.name}}
+</h2>
+<div>
+  <p>
+    <strong>Category: </strong>{{meal.category}}
+  </p>
+  <p>
+    <strong>Area: </strong>{{meal.area}}
+  </p>
+  <p>
+    <strong>Tags: </strong>{{meal.tags}}
+  </p>
+</div>
+<div>
+  <strong>Ingredients: </strong>
+  <ul class="list-disc">
+    <li *ngFor="let ingredient of meal.ingredients">{{ingredient.measure}} <strong>{{ingredient.name}}</strong></li>
+  </ul>
+</div>
+<p><strong class="bold">Instructions:</strong> {{meal.instructions}}</p>
