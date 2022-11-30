@@ -2,17 +2,31 @@
   <h2 class="text-center text-2xl bold m-2">
     {{meal.name}}
   </h2>
-  <div>
-    <p>
-      <strong>Category: </strong>{{meal.category}}
-    </p>
-    <p>
-      <strong>Area: </strong>{{meal.area}}
-    </p>
-    <p>
-      <strong>Tags: </strong>{{meal.tags}}
-    </p>
+  
+  <div class="grid grid-cols-6">
+    <div>
+      <p>
+        <strong>Category: </strong>{{meal.category}}
+      </p>
+    </div>
+    <div>
+      <p>
+        <strong>Area: </strong>{{meal.area}}
+      </p>
+    </div>
+    <div>
+      <p>
+        <strong>Tags: </strong>{{meal.tags}}
+      </p>
+    </div>
+    <div class="row-start-2 col-span-2 p-10 drop-shadow-md">
+      <app-ingredient-list  [ingredients]="meal.ingredients"></app-ingredient-list>
+    </div>
+    <div class="row-start-2 col-span-4 p-10">
+      <img class="rounded-lg drop-shadow-md" src="{{meal.thumb}}" alt={{meal.name}}>
+    </div>
+    <div class="col-span-6 row-start-3">
+      <p><strong class="bold">Instructions:</strong> {{meal.instructions}}</p>
+    </div>
   </div>
-  <app-ingredient-list [ingredients]="meal.ingredients"></app-ingredient-list>
-  <p><strong class="bold">Instructions:</strong> {{meal.instructions}}</p>
 </div>

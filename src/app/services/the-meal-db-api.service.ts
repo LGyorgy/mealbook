@@ -30,6 +30,7 @@ export class TheMealDbApiService {
     meal.area = mealDto["strArea"];
     meal.instructions = mealDto["strInstructions"];
     meal.tags = mealDto["strTags"].split(',');
+    meal.thumb = mealDto["strMealThumb"];
     meal.youtube = mealDto["strYoutube"];
     meal.ingredients = [] as Ingredient[];
     for (let i = 1; i <= 20; i++) {
