@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IngredientListComponent } from './components/ingredient-list/ingredient-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MatListModule } from '@angular/material/list';
     MatCardModule,
     MatListModule,
     HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
