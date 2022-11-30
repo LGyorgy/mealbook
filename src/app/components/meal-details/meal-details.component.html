@@ -13,11 +13,6 @@
       <strong>Tags: </strong>{{meal.tags}}
     </p>
   </div>
-  <div>
-    <strong>Ingredients: </strong>
-    <ul class="list-disc">
-      <li *ngFor="let ingredient of meal.ingredients">{{ingredient.measure}} <strong>{{ingredient.name}}</strong></li>
-    </ul>
-  </div>
+  <app-ingredient-list [ingredients]="meal.ingredients"></app-ingredient-list>
   <p><strong class="bold">Instructions:</strong> {{meal.instructions}}</p>
 </div>

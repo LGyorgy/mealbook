@@ -8,19 +8,25 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MealDetailsComponent } from './components/meal-details/meal-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IngredientListComponent } from './components/ingredient-list/ingredient-list.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    MealDetailsComponent
+    MealDetailsComponent,
+    IngredientListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    HttpClientModule
+    MatCardModule,
+    MatListModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
