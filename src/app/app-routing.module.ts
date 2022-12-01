@@ -6,6 +6,7 @@ import { CategoryRouteComponent } from './routes/category-route/category-route.c
 import { MealRouteComponent } from './routes/meal-route/meal-route.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: "categories", pathMatch: 'full' },
   { path: 'categories', component: CategoriesRouteComponent },
   { path: 'categories/:categoryName', component: CategoryRouteComponent },
   { path: 'meals/:id', component: MealRouteComponent }
