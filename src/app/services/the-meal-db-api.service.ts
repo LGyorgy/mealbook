@@ -5,6 +5,7 @@ import { Meal } from 'src/interfaces/meal';
 import { Ingredient } from 'src/interfaces/ingredient';
 import { map } from 'rxjs/operators';
 import { Category } from 'src/interfaces/category';
+import { SimpleMeal } from 'src/interfaces/simple-meal';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,12 @@ export class TheMealDbApiService {
     const url = `${this.apiBaseUrl}/categories.php`
     return this.http.get<any>(url).pipe(
       map(data => this.createCategoriesFromCategoriesDto(data["categories"]))
+    );
+  }
+  public getMealsByCategory(category: string): Observable<SimpleMeal[]> {
+    const url = `${this.apiBaseUrl}/filter.php?c=${category}`
+    return this.http.get<any>(url).pipe(
+      map(data => this.createSimpleMealsFromSimpleMealsDto(data["meals"]))
     );
   }
 
@@ -59,6 +66,27 @@ export class TheMealDbApiService {
 
     console.log(meal);
     return meal;
+  }
+
+  private createSimpleMealFromSimpleMealDto(mealDto: any): SimpleMeal {
+    let meal: SimpleMeal = {} as SimpleMeal;
+
+    meal.id = +mealDto["idMeal"];
+    meal.name = mealDto["strMeal"];
+    meal.thumb = mealDto["strMealThumb"];
+
+    return meal;
+  }
+
+  private createSimpleMealsFromSimpleMealsDto(mealsDto: any[]): SimpleMeal[] {
+    let meals: SimpleMeal[] = [];
+
+    mealsDto.forEach(mealDto => {
+      let meal: SimpleMeal = this.createSimpleMealFromSimpleMealDto(mealDto);
+      meals.push(meal);
+    });
+
+    return meals;
   }
 
   private createCategoryFromCategoryDto(categoryDto: any): Category {

@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Meal } from 'src/interfaces/meal';
-import { Ingredient } from 'src/interfaces/ingredient';
 import { TheMealDbApiService } from './the-meal-db-api.service';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Category } from 'src/interfaces/category';
+import { SimpleMeal } from 'src/interfaces/simple-meal';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +18,9 @@ export class MealService {
 
   public getCategories(): Observable<Category[]> {
     return this.api.getCategories();
+  }
+
+  public getMealsByCategory(category: string): Observable<SimpleMeal[]> {
+    return this.api.getMealsByCategory(category);
   }
 }
