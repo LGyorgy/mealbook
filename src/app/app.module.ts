@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CategoryCardDisplayComponent } from './components/category-card-display/category-card-display.component';
 import { CategoryCardComponent } from './components/category-card-display/category-card/category-card.component';
 import { MealRouteComponent } from './routes/meal-route/meal-route.component';
+import { CategoriesRouteComponent } from './routes/categories-route/categories-route.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MealRouteComponent } from './routes/meal-route/meal-route.component';
     IngredientListComponent,
     CategoryCardDisplayComponent,
     CategoryCardComponent,
-    MealRouteComponent
+    MealRouteComponent,
+    CategoriesRouteComponent
   ],
   imports: [
     BrowserModule,

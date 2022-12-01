@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { MealService } from 'src/app/services/meal.service';
+import { Component, Input } from '@angular/core';
 import { Category } from 'src/interfaces/category';
 
 @Component({
@@ -8,17 +7,5 @@ import { Category } from 'src/interfaces/category';
   styleUrls: ['./category-card-display.component.css']
 })
 export class CategoryCardDisplayComponent {
-  categories: Category[] | undefined;
-
-  constructor(private mealService: MealService) {}
-
-  ngOnInit() {
-    this.initializeCategories();
-  }
-
-  private initializeCategories() {
-    this.mealService.getCategories().subscribe(
-      categories => this.categories = categories
-    )
-  }
+ @Input() categories!: Category[];
 }
