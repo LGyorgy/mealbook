@@ -44,7 +44,7 @@ export class TheMealDbApiService {
     meal.category = mealDto["strCategory"];
     meal.area = mealDto["strArea"];
     meal.instructions = mealDto["strInstructions"];
-    meal.tags = mealDto["strTags"].split(',');
+    meal.tags = mealDto["strTags"]?.split(',');
     meal.thumb = mealDto["strMealThumb"];
     meal.youtube = mealDto["strYoutube"];
     meal.ingredients = [] as Ingredient[];
