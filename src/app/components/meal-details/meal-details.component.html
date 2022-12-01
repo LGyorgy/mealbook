@@ -3,16 +3,15 @@
     {{meal.name}}
   </h2>
   
-  <div class="grid grid-cols-6">
-    <div>
+  <div class="grid grid-cols-6 items-center">
+    <div class="align-center">
       <p>
-        <strong>Category: </strong>{{meal.category}}
+        <strong>Category: </strong>
+        <button mat-button routerLink="/categories/{{meal.category}}">{{meal.category}}</button>
       </p>
     </div>
     <div>
-      <p>
         <strong>Area: </strong>{{meal.area}}
-      </p>
     </div>
     <div>
       <p *ngIf="meal.tags">
