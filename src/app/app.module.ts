@@ -17,6 +17,7 @@ import { CategoryCardComponent } from './components/category-card-display/catego
 import { MealRouteComponent } from './routes/meal-route/meal-route.component';
 import { CategoriesRouteComponent } from './routes/categories-route/categories-route.component';
 import { CategoryRouteComponent } from './routes/category-route/category-route.component';
+import { MealCardDisplayComponent } from './components/meal-card-display/meal-card-display.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CategoryRouteComponent } from './routes/category-route/category-route.c
     CategoryCardComponent,
     MealRouteComponent,
     CategoriesRouteComponent,
-    CategoryRouteComponent
+    CategoryRouteComponent,
+    MealCardDisplayComponent
   ],
   imports: [
     BrowserModule,
