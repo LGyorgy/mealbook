@@ -14,6 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
 import { CategoryCardDisplayComponent } from './components/category-card-display/category-card-display.component';
 import { CategoryCardComponent } from './components/category-card-display/category-card/category-card.component';
+import { MealRouteComponent } from './routes/meal-route/meal-route.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CategoryCardComponent } from './components/category-card-display/catego
     MealDetailsComponent,
     IngredientListComponent,
     CategoryCardDisplayComponent,
-    CategoryCardComponent
+    CategoryCardComponent,
+    MealRouteComponent
   ],
   imports: [
     BrowserModule,
