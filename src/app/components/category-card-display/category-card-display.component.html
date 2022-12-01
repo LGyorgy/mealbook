@@ -1,6 +1,6 @@
 <div *ngIf="categories" class="grid grid-cols-1">
   <div *ngFor="let category of categories" class="p-8">
-    <a routerLink="categories/{{category.name}}">
+    <a routerLink="/categories/{{category.name}}">
       <app-category-card
         [category]="category"
       ></app-category-card>
