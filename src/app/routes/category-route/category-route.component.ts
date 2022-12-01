@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MealService } from 'src/app/services/meal.service';
-import { Meal } from 'src/interfaces/meal';
+import { SimpleMeal } from 'src/interfaces/simple-meal';
 
 @Component({
   selector: 'app-category-route',
@@ -9,7 +9,7 @@ import { Meal } from 'src/interfaces/meal';
   styleUrls: ['./category-route.component.css']
 })
 export class CategoryRouteComponent {
-  meals: Meal[] | undefined;
+  meals: SimpleMeal[] | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,7 +19,7 @@ export class CategoryRouteComponent {
   ngOnInit() {
     const category = String(this.route.snapshot.paramMap.get('categoryName'));
     this.mealService.getMealsByCategory(category).subscribe(
-      meals => console.log(meals)
+      meals => this.meals = meals
     )
   }
 }

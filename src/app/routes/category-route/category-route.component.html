@@ -1,1 +1,5 @@
-<p>category-route works!</p>
+<div *ngIf="meals">
+  <p *ngFor="let meal of meals">
+    <a routerLink="/meals/{{meal.id}}">{{meal.name}}</a>
+  </p>
+</div>
