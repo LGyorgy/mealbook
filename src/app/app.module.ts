@@ -12,13 +12,17 @@ import { IngredientListComponent } from './components/ingredient-list/ingredient
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
+import { CategoryCardDisplayComponent } from './components/category-card-display/category-card-display.component';
+import { CategoryCardComponent } from './components/category-card-display/category-card/category-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MealDetailsComponent,
-    IngredientListComponent
+    IngredientListComponent,
+    CategoryCardDisplayComponent,
+    CategoryCardComponent
   ],
   imports: [
     BrowserModule,

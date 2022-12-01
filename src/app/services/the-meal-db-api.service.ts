@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Meal } from 'src/interfaces/meal';
 import { Ingredient } from 'src/interfaces/ingredient';
 import { map } from 'rxjs/operators';
+import { Category } from 'src/interfaces/category';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,13 @@ export class TheMealDbApiService {
     const url = `${this.apiBaseUrl}/lookup.php?i=${id}`
     return this.http.get<any>(url).pipe(
       map(data => this.createMealFromMealDto(data["meals"][0]))
+    );
+  }
+
+  public getCategories(): Observable<Category[]> {
+    const url = `${this.apiBaseUrl}/categories.php`
+    return this.http.get<any>(url).pipe(
+      map(data => this.createCategoriesFromCategoriesDto(data["categories"]))
     );
   }
 
@@ -51,5 +59,27 @@ export class TheMealDbApiService {
 
     console.log(meal);
     return meal;
+  }
+
+  private createCategoryFromCategoryDto(categoryDto: any): Category {
+    let category = {} as Category;
+
+    category.id = +categoryDto["idCategory"];
+    category.name = categoryDto["strCategory"];
+    category.thumb = categoryDto["strCategoryThumb"];
+    category.description = categoryDto["strCategoryDescription"];
+
+    return category;
+  }
+
+  private createCategoriesFromCategoriesDto(categoryDto: any[]): Category[] {
+    let categories: Category[] = [];
+
+    categoryDto.forEach(categoryDto => {
+      let category: Category = this.createCategoryFromCategoryDto(categoryDto);
+      categories.push(category);
+    });
+
+    return categories;
   }
 }
