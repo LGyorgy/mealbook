@@ -1,1 +1,8 @@
-<a routerLink="/meals/{{meal.id}}">{{meal.name}}</a>
+<mat-card class="h-fit shadow-xl hover:shadow-md">
+  <mat-card-header>
+    <mat-card-title >{{meal.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <img mat-card-image src="{{meal.thumb}}/preview">
+  </mat-card-content>
+</mat-card>
