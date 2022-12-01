@@ -15,8 +15,11 @@
       </p>
     </div>
     <div>
-      <p>
+      <p *ngIf="meal.tags">
         <strong>Tags: </strong>{{meal.tags}}
+      </p>
+      <p *ngIf="!meal.tags">
+        <strong>Tags: </strong><em>N/A</em>
       </p>
     </div>
     <div class="row-start-2 col-span-2 p-10 drop-shadow-md">
