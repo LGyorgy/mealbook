@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoryCardDisplayComponent } from './components/category-card-display/category-card-display.component';
 import { CategoriesRouteComponent } from './routes/categories-route/categories-route.component';
 import { CategoryRouteComponent } from './routes/category-route/category-route.component';
 import { MealRouteComponent } from './routes/meal-route/meal-route.component';
