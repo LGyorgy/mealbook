@@ -9,6 +9,7 @@ import { SimpleMeal } from 'src/interfaces/simple-meal';
   styleUrls: ['./category-route.component.css']
 })
 export class CategoryRouteComponent {
+  category: string | undefined;
   meals: SimpleMeal[] | undefined;
 
   constructor(
@@ -17,8 +18,8 @@ export class CategoryRouteComponent {
   ) {}
 
   ngOnInit() {
-    const category = String(this.route.snapshot.paramMap.get('categoryName'));
-    this.mealService.getMealsByCategory(category).subscribe(
+    this.category = String(this.route.snapshot.paramMap.get('categoryName'));
+    this.mealService.getMealsByCategory(this.category).subscribe(
       meals => this.meals = meals
     )
   }
