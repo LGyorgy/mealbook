@@ -11,7 +11,8 @@
       </p>
     </div>
     <div>
-        <strong>Area: </strong>{{meal.area}}
+        <strong>Area: </strong>
+        <button mat-button routerLink="/areas/{{meal.area}}">{{meal.area}}</button>
     </div>
     <div>
       <p *ngIf="meal.tags">
