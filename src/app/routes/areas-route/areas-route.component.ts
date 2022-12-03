@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MealService } from 'src/app/services/meal.service';
-import { Area } from 'src/interfaces/area';
+import { Area } from 'src/app/interfaces/area';
 
 @Component({
   selector: 'app-areas-route',

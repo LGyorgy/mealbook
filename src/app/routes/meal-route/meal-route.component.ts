@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MealService } from 'src/app/services/meal.service';
-import { Meal } from 'src/interfaces/meal';
+import { Meal } from 'src/app/interfaces/meal';
 
 @Component({
   selector: 'app-meal-route',

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SimpleMeal } from 'src/interfaces/simple-meal';
+import { SimpleMeal } from 'src/app/interfaces/simple-meal';
 
 @Component({
   selector: 'app-meal-card-display',

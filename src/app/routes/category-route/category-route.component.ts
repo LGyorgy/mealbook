@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MealService } from 'src/app/services/meal.service';
-import { SimpleMeal } from 'src/interfaces/simple-meal';
+import { SimpleMeal } from 'src/app/interfaces/simple-meal';
 
 @Component({
   selector: 'app-category-route',

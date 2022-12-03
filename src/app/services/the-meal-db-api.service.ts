@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Meal } from 'src/interfaces/meal';
-import { Ingredient } from 'src/interfaces/ingredient';
+import { Meal } from 'src/app/interfaces/meal';
+import { Ingredient } from 'src/app/interfaces/ingredient';
 import { map } from 'rxjs/operators';
-import { Category } from 'src/interfaces/category';
-import { SimpleMeal } from 'src/interfaces/simple-meal';
-import { Area } from 'src/interfaces/area';
-import { IngredientOption } from 'src/interfaces/ingredient-option';
+import { Category } from 'src/app/interfaces/category';
+import { SimpleMeal } from 'src/app/interfaces/simple-meal';
+import { Area } from 'src/app/interfaces/area';
+import { IngredientOption } from 'src/app/interfaces/ingredient-option';
 
 @Injectable({
   providedIn: 'root'

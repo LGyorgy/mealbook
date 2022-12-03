@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MealService } from 'src/app/services/meal.service';
-import { Category } from 'src/interfaces/category';
+import { Category } from 'src/app/interfaces/category';
 
 @Component({
   selector: 'app-categories-route',
