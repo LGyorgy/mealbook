@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { Category } from 'src/interfaces/category';
 import { SimpleMeal } from 'src/interfaces/simple-meal';
 import { Area } from 'src/interfaces/area';
+import { IngredientOption } from 'src/interfaces/ingredient-option';
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +53,13 @@ export class TheMealDbApiService {
     );
   }
 
+  public getIngredientOptions(): Observable<IngredientOption[]> {
+    const url = `${this.apiBaseUrl}/list.php?i=list`;
+    return this.http.get<any>(url).pipe(
+      map(data => this.createIngredientOptionsFromIngredientOptionsDto(data["meals"]))
+    );
+  }
+
   private createAreasFromAreasDto(areasDto: []): Area[] {
     let areas: Area[] = [];
 
@@ -62,6 +70,28 @@ export class TheMealDbApiService {
     })
 
     return areas;
+  }
+
+  private createIngredientOptionsFromIngredientOptionsDto(ingredientsDto: any): IngredientOption[] {
+    let options: IngredientOption[] = [];
+
+    ingredientsDto.forEach((ingredientDto: any) => {
+      let option: IngredientOption = this.createIngredientOptionFromIngredientOptionDto(ingredientDto);
+      options.push(option);
+    })
+
+    return options
+  }
+
+  private createIngredientOptionFromIngredientOptionDto(ingredientDto: any): IngredientOption {
+    let option: IngredientOption = {} as IngredientOption;
+
+    option.id = ingredientDto["idIngredient"];
+    option.name = ingredientDto["strIngredient"];
+    option.description = ingredientDto["strDescription"];
+    option.type = ingredientDto["strType"];
+
+    return option;
   }
 
   private createMealFromMealDto = (mealDto: any): Meal => {

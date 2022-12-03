@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { Category } from 'src/interfaces/category';
 import { SimpleMeal } from 'src/interfaces/simple-meal';
 import { Area } from 'src/interfaces/area';
+import { IngredientOption } from 'src/interfaces/ingredient-option';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,10 @@ export class MealService {
 
   public getAreas(): Observable<Area[]> {
     return this.api.getAreas();
+  }
+
+  public getIngredientOptions(): Observable<IngredientOption[]> {
+    return this.api.getIngredientOptions();
   }
 
   public getMealsByCategory(category: string): Observable<SimpleMeal[]> {
