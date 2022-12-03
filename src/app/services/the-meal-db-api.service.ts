@@ -46,6 +46,13 @@ export class TheMealDbApiService {
     );
   }
 
+  public getMealsByIngredient(ingredient: string): Observable<SimpleMeal[]> {
+    const url = `${this.apiBaseUrl}/filter.php?i=${ingredient}`
+    return this.http.get<any>(url).pipe(
+      map(data => this.createSimpleMealsFromSimpleMealsDto(data["meals"]))
+    );
+  }
+
   public getAreas(): Observable<Area[]> {
     const url = `${this.apiBaseUrl}/list.php?a=list`;
     return this.http.get<any>(url).pipe(

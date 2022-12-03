@@ -37,4 +37,8 @@ export class MealService {
   public getMealsByArea(area: string): Observable<SimpleMeal[]> {
     return this.api.getMealsByArea(area);
   }
+
+  public getMealsByIngredient(ingredient: string): Observable<SimpleMeal[]> {
+    return this.api.getMealsByIngredient(ingredient);
+  }
 }
