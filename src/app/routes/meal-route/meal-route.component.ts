@@ -5,8 +5,7 @@ import { Meal } from 'src/interfaces/meal';
 
 @Component({
   selector: 'app-meal-route',
-  templateUrl: './meal-route.component.html',
-  styleUrls: ['./meal-route.component.css']
+  templateUrl: './meal-route.component.html'
 })
 export class MealRouteComponent {
   meal: Meal | undefined;

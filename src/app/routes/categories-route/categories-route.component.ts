@@ -4,8 +4,7 @@ import { Category } from 'src/interfaces/category';
 
 @Component({
   selector: 'app-categories-route',
-  templateUrl: './categories-route.component.html',
-  styleUrls: ['./categories-route.component.css']
+  templateUrl: './categories-route.component.html'
 })
 export class CategoriesRouteComponent {
   categories: Category[] | undefined;

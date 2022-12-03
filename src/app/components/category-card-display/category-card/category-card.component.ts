@@ -3,8 +3,7 @@ import { Category } from 'src/interfaces/category';
 
 @Component({
   selector: 'app-category-card',
-  templateUrl: './category-card.component.html',
-  styleUrls: ['./category-card.component.css']
+  templateUrl: './category-card.component.html'
 })
 export class CategoryCardComponent {
   @Input() category!: Category;

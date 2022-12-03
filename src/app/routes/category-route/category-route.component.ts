@@ -5,8 +5,7 @@ import { SimpleMeal } from 'src/interfaces/simple-meal';
 
 @Component({
   selector: 'app-category-route',
-  templateUrl: './category-route.component.html',
-  styleUrls: ['./category-route.component.css']
+  templateUrl: './category-route.component.html'
 })
 export class CategoryRouteComponent {
   category: string | undefined;
