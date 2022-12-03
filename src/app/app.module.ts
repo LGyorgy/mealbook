@@ -22,6 +22,7 @@ import { MealCardComponent } from './components/meal-card-display/meal-card/meal
 import { AreasRouteComponent } from './routes/areas-route/areas-route.component';
 import { AreaListComponent } from './components/area-list/area-list.component';
 import { AreaRouteComponent } from './routes/area-route/area-route.component';
+import { IngredientsRouteComponent } from './routes/ingredients-route/ingredients-route.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AreaRouteComponent } from './routes/area-route/area-route.component';
     MealCardComponent,
     AreasRouteComponent,
     AreaListComponent,
-    AreaRouteComponent
+    AreaRouteComponent,
+    IngredientsRouteComponent
   ],
   imports: [
     BrowserModule,
