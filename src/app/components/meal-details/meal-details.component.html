@@ -29,7 +29,8 @@
       <img class="rounded-lg drop-shadow-md" src="{{meal.thumb}}" alt={{meal.name}}>
     </div>
     <div class="col-span-6 row-start-3">
-      <p><strong class="bold">Instructions:</strong> {{meal.instructions}}</p>
+      <strong class="bold">Instructions:</strong>
+      <p *ngFor="let paragraph of meal.instructions.split('\n')">{{paragraph}}</p>
     </div>
   </div>
 </div>
