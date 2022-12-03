@@ -6,6 +6,7 @@ import { Ingredient } from 'src/interfaces/ingredient';
 import { map } from 'rxjs/operators';
 import { Category } from 'src/interfaces/category';
 import { SimpleMeal } from 'src/interfaces/simple-meal';
+import { Area } from 'src/interfaces/area';
 
 @Injectable({
   providedIn: 'root'
@@ -29,11 +30,31 @@ export class TheMealDbApiService {
       map(data => this.createCategoriesFromCategoriesDto(data["categories"]))
     );
   }
+
   public getMealsByCategory(category: string): Observable<SimpleMeal[]> {
     const url = `${this.apiBaseUrl}/filter.php?c=${category}`
     return this.http.get<any>(url).pipe(
       map(data => this.createSimpleMealsFromSimpleMealsDto(data["meals"]))
     );
+  }
+
+  public getAreas(): Observable<Area[]> {
+    const url = `${this.apiBaseUrl}/list.php?a=list`;
+    return this.http.get<any>(url).pipe(
+      map(data => this.createAreasFromAreasDto(data["meals"]))
+    );
+  }
+
+  private createAreasFromAreasDto(areasDto: []): Area[] {
+    let areas: Area[] = [];
+
+    areasDto.forEach(areaDto => {
+      let area: Area = {} as Area;
+      area.name = areaDto["strArea"];
+      areas.push(area);
+    })
+
+    return areas;
   }
 
   private createMealFromMealDto = (mealDto: any): Meal => {
