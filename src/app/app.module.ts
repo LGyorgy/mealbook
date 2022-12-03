@@ -23,6 +23,7 @@ import { AreasRouteComponent } from './routes/areas-route/areas-route.component'
 import { AreaListComponent } from './components/area-list/area-list.component';
 import { AreaRouteComponent } from './routes/area-route/area-route.component';
 import { IngredientsRouteComponent } from './routes/ingredients-route/ingredients-route.component';
+import { IngredientOptionListComponent } from './components/ingredient-option-list/ingredient-option-list.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { IngredientsRouteComponent } from './routes/ingredients-route/ingredient
     AreasRouteComponent,
     AreaListComponent,
     AreaRouteComponent,
-    IngredientsRouteComponent
+    IngredientsRouteComponent,
+    IngredientOptionListComponent
   ],
   imports: [
     BrowserModule,
