@@ -28,4 +28,8 @@ export class MealService {
   public getMealsByCategory(category: string): Observable<SimpleMeal[]> {
     return this.api.getMealsByCategory(category);
   }
+
+  public getMealsByArea(area: string): Observable<SimpleMeal[]> {
+    return this.api.getMealsByArea(area);
+  }
 }
